@@ -1,0 +1,16 @@
+[project]
+name = "atlas"
+version = "0.0.1"
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.12",
+    "tomli-w>=1.0",
+    "platformdirs>=4.0"
+]
+
+[project.scripts]
+atlas = "atlas.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
