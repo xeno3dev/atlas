@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Nix
+/atlas
+/result
+/build/
+/__main__.dist/*

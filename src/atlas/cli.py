@@ -15,7 +15,16 @@ import os
 from atlas import hooks
 import shlex
 
+from atlas import __version__
+
 app = typer.Typer(help="a tmux-free project switcher/launcher for developers")
+
+
+def version_callback(value: bool):
+    if value:
+        print(f"atlas v{__version__}")
+        raise typer.Exit()
+    
 
 @app.command(name="open")
 def open_cmd(name: Optional[str] = typer.Argument(None, help="project name (fuzzy pick if omitted)")):
@@ -40,6 +49,11 @@ def forget(name: str = typer.Argument(..., help="project name to remove from reg
 @app.command()
 def which():
     cmd_which()
+
+@app.callback()
+def callback(version: bool = typer.Option(None, "--version", callback=version_callback, is_eager=True, help="Show version and exit.")):
+    pass
+
 
 def cmd_add(path_arg):
     path = Path(path_arg) if path_arg else Path.cwd()
