@@ -1,9 +1,10 @@
 from atlas.cli import app
+from atlas.errors import AtlasError
 
 def main():
     try:
         app()
-    except Exception as e:
+    except AtlasError as e:
         print(f"✗ {e}")
         raise SystemExit(1)
 
