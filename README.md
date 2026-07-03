@@ -31,7 +31,7 @@ It's designed to be as simple as possible, while still providing the necessary f
 
 
 > [!NOTE]
-> atlas requires [`fzf`](https://github.com/junegunn/fzf) or [`skim`](https://github.com/lotabout/skim) to be installed on your system for fuzzy project picking.
+> atlas requires [`fzf`](https://github.com/junegunn/fzf) or [`skim`](https://github.com/lotabout/skim) to be installed on your system for fuzzy project picking; falls back to numbered list otherwise
 
 ### NixOS (flake)
  
